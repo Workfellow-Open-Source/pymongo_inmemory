@@ -1,4 +1,5 @@
 import glob
+import distutils
 import zipfile
 import logging
 from os import path
