@@ -1,4 +1,5 @@
 import glob
+import distutils
 import zipfile
 import logging
 import os
@@ -199,7 +200,28 @@ def download(os_name=None, version=None, os_ver=None, ignore_cache=False):
         _download_file(dl_url, archive_file)
         _extract(archive_file)
 
-    if _get_mongod(downloaded_version) is None:
-        _extract(archive_file)
+        if os_name == "linux":
+            dl_url = "https://downloads.mongodb.com/compass/mongosh-1.8.0-linux-x64.tgz"
+        else:
+            dl_url = "https://downloads.mongodb.com/compass/mongosh-1.8.0-win32-x64.zip"
+        archive_file_mongo = path.join(dl_folder, _collect_archive_name(dl_url))
+        mongod_folder = _get_bin_from_zip_file("mongodb*")
+        _download_file(dl_url, archive_file_mongo)
+        _extract(archive_file_mongo)
+        mongo_folder = _get_bin_from_zip_file("mongosh*")
+        if os_name == "linux":
+            os.rename(os.path.join(mongo_folder, "mongosh"), os.path.join(mongo_folder, "mongo"))
+        else:
+            os.rename(
+                os.path.join(mongo_folder, "mongosh.exe"), os.path.join(mongo_folder, "mongo.exe")
+            )
+        import distutils
 
+        distutils.dir_util.copy_tree(mongo_folder, mongod_folder)
     return path.dirname(_get_mongod(downloaded_version))
+
+def _get_bin_from_zip_file(folder_name):
+
+    res = os.path.join(_extract_folder(), folder_name, "bin")
+    res = glob.glob(res)[0]
+    return os.path.normpath(res)
