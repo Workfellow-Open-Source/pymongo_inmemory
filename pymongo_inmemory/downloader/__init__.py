@@ -127,9 +127,9 @@ def _collect_archive_name(url):
     return url.split("/")[-1]
 
 
-def _get_mongod(version):
+def _get_mongod():
     for binfile_path in glob.iglob(
-        path.join(_extract_folder(), f"**{version}**/bin/*"), recursive=True
+        path.join(_extract_folder(), f"**/bin/*"), recursive=True
     ):
         binfile_name = path.basename(binfile_path)
         try:
@@ -183,7 +183,7 @@ def download(os_name=None, version=None, os_ver=None, ignore_cache=False):
     if os_ver is None:
         os_ver = conf("os_version")
 
-    dl_url, downloaded_version = conf("download_url", best_url(
+    dl_url = conf("download_url", best_url(
         os_name,
         version=version,
         os_ver=os_ver
@@ -218,7 +218,7 @@ def download(os_name=None, version=None, os_ver=None, ignore_cache=False):
         import distutils
 
         distutils.dir_util.copy_tree(mongo_folder, mongod_folder)
-    return path.dirname(_get_mongod(downloaded_version))
+    return path.dirname(_get_mongod())
 
 def _get_bin_from_zip_file(folder_name):
 
