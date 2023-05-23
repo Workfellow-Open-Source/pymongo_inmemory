@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pymongo_inmemory"
-version = "0.2.12"
+version = "0.2.13"
 description = "A mongo mocking library with an ephemeral MongoDB running in memory."
 authors = [
     "Kaizen Dorks <kaizendorks@gmail.com>",
@@ -16,26 +16,23 @@ homepage = "https://github.com/kaizendorks/pymongo_inmemory"
 repository = "https://github.com/kaizendorks/pymongo_inmemory"
 keywords = ["mongodb", "testing", "pymongo"]
 classifiers = [
-    "Programming Language :: Python :: 3.6",
-    "License :: OSI Approved :: MIT License",
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Operating System :: MacOS :: MacOS X",
-    "Operating System :: POSIX :: Linux",
-    "Operating System :: Microsoft :: Windows",
-    "Topic :: Database :: Database Engines/Servers",
-    "Topic :: Software Development :: Testing",
-    "Topic :: Utilities",
-]
-include = [
-    "LICENSE",
+  "Programming Language :: Python :: 3.7",
+  "License :: OSI Approved :: MIT License",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: Microsoft :: Windows",
+  "Topic :: Database :: Database Engines/Servers",
+  "Topic :: Software Development :: Testing",
+  "Topic :: Utilities",
 ]
 
 [tool.poetry.urls]
 "Bug Reports" = "https://github.com/kaizendorks/pymongo_inmemory/issues"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 pymongo = "*"
 
 [tool.poetry.dev-dependencies]
