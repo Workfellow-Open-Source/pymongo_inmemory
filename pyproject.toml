@@ -47,6 +47,10 @@ wheel = "*"
 setuptools = "*"
 click = "*"
 
+[tool.poetry.group.dev.dependencies]
+ruff-lsp = "^0.0.35"
+black = "^23.3.0"
+
 [build-system]
 requires = ["poetry-core>=0.12"]
 build-backend = "poetry.core.masonry.api"
