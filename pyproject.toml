@@ -50,6 +50,10 @@ click = "*"
 [tool.poetry.group.dev.dependencies]
 ruff-lsp = "^0.0.35"
 black = "^23.3.0"
+twine = "*"
+wheel = "*"
+setuptools = "*"
+click = "*"
 
 [build-system]
 requires = ["poetry-core>=0.12"]
