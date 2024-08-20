@@ -2,16 +2,14 @@
 name = "pymongo_inmemory"
 version = "0.4.3"
 description = "A mongo mocking library with an ephemeral MongoDB running in memory."
-authors = [
-    "Kaizen Dorks <kaizendorks@gmail.com>",
-]
+authors = ["Kaizen Dorks <kaizendorks@gmail.com>"]
 maintainers = [
-    "Ertugrul Karademir <ekarademir@gmail.com>",
-    "Daniel Jimenez Garcia",
-    "Ruben Vasconcelos",
+  "Ertugrul Karademir <ekarademir@gmail.com>",
+  "Daniel Jimenez Garcia",
+  "Ruben Vasconcelos",
 ]
 readme = "README.md"
-license="MIT"
+license = "MIT"
 homepage = "https://github.com/kaizendorks/pymongo_inmemory"
 repository = "https://github.com/kaizendorks/pymongo_inmemory"
 keywords = ["mongodb", "testing", "pymongo"]
@@ -27,6 +25,7 @@ classifiers = [
   "Topic :: Software Development :: Testing",
   "Topic :: Utilities",
 ]
+include = ["LICENSE"]
 
 [tool.poetry.urls]
 "Bug Reports" = "https://github.com/kaizendorks/pymongo_inmemory/issues"
