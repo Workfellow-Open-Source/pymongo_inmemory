@@ -4,6 +4,7 @@ This module can be used for spinning up an ephemeral MongoDB instance:
 ::
     python -m python_inmemory.mongod
 """
+
 import atexit
 import logging
 import os
